@@ -4,22 +4,68 @@
   <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  <div class="tabbed-component">
+  <script id="section-template" type="text/x-wings">
+    {:links}
+    <li>
+    <a href="{&webUrl}">
+      {webTitle}
+    </a>
+    </li>
+    {/links}
+  </script>
+  <div class="tabbed-component"
+       data-base-url="http://content.guardianapis.com/search"
+       data-common-args='{
+        "api-key": "test",
+        "order-by": "newest",
+        "page-size": "10"
+       }'
+       >
     <nav class="tabs">
       <ul>
-        <li class="tab">UK News</li>
-        <li class="tab">Sport</li>
-        <li class="tab">Travel</li>
+        <li class="tab tab-uk-news"
+            data-args='{
+            "section": "uk-news"
+            }'
+            data-section="uk-news"
+        > 
+          UK News
+        </li>
+        <li class="tab tab-football"
+            data-args='{
+              "section": "football"
+            }'
+            data-section="football"
+        >
+          Football
+        </li>
+        <li class="tab tab-travel"
+            data-args='{
+              "section": "travel"
+            }'
+            data-section="travel"
+        >
+          Travel
+        </li>
       </ul>
     </nav>
     <div class="tabbed-content-container">
-      <div class="tab-content"></div>
-      <div class="tab-content"></div>
-      <div class="tab-content"></div>
+      <div class="tab-content" data-content-section="uk-news">
+        <ol>
+        </ol>
+      </div>
+      <div class="tab-content" data-content-section="football">
+        <ol>
+        </ol>
+      </div>
+      <div class="tab-content" data-content-section="travel">
+        <ol>
+        </ol>
+      </div>
     </div>
   </div>
-  <script src="scripts/ender.min.js></script>
-  <script src="scripts/tabbed-component.js></script>
+  <script src="scripts/ender.min.js"></script>
+  <script src="scripts/tabbed-component.js"></script>
 
   </body>
 </html>
