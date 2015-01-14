@@ -1,4 +1,19 @@
-.tab {
-  border: 1px solid #d61d00; }
+.tabbed-component .tab-uk-news, .tabbed-component .tab-football, .tabbed-component .tab-travel {
+  list-style-type: none;
+  display: inline-block;
+  padding: .5rem;
+  cursor: pointer; }
+.tabbed-component .tab-uk-news {
+  background: #ec6550; }
+  .tabbed-component .tab-uk-news.active {
+    background: #d61d00; }
+.tabbed-component .tab-football {
+  background: #17cf17; }
+  .tabbed-component .tab-football.active {
+    background: #008000; }
+.tabbed-component .tab-travel {
+  background: #509fe5; }
+  .tabbed-component .tab-travel.active {
+    background: #066ec9; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,41 @@
 
 @import 'variables.scss';
 
-.tab {
-  border: 1px solid $news;
+.tabbed-component {
+
+
+
+  %tab {
+    list-style-type: none;
+    display: inline-block;
+    padding: .5rem;
+    cursor: pointer;
+  }
+
+  .tab-uk-news {
+    @extend %tab;
+    background: unfocused-color($news);
+
+    &.active {
+      background: $news;
+    }
+  }
+
+  .tab-football {
+    @extend %tab;
+    background: unfocused-color($sports);
+
+    &.active {
+      background: $sports;
+    }
+  }
+
+  .tab-travel {
+    @extend %tab;
+    background: unfocused-color($travel);
+
+    &.active {
+      background: $travel;
+    }
+  }
 }

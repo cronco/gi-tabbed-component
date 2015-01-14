@@ -1,13 +1,29 @@
 
 //Colours
 
-$lightness-percent: 30%;
+$lightness-percent: 20%;
+$desaturation-percent: 20%;
 
 $news: 	#d61d00;
-$news-lighter: lightnen($news, $lightness-percent);
 
 $sports: #008000;
-$sports-lighter: lightnen($sports, $lightness-percent);
 
 $travel: #066ec9;
-$travel-lighter: lightnen($travel, $lightness-percent);
+
+@function unfocused-color($color) {
+  $lighter: lighten($color, $lightness-percent);
+  @return desaturate($lighter, $desaturation-percent);
+}
+
+
+//Media Queries
+
+$phone-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$wide-width: 1600px;
+
+$phone-query:  "screen and (max-width: #{$phone-width})";
+$tablet-query: "screen and (max-width: #{$desktop-width} - 1) and (min-width: #{$tablet-width})";
+$desktop-query: "screen and (max-width: #{$wide-width} - 1) and (min-width: #{$desktop-width})";
+$wide-query:   "screen and (min-width: #{$wide-width})";
